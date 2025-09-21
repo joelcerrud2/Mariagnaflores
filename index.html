@@ -30,7 +30,7 @@ html, body {
 #login-screen {
     z-index: 200;
     /* CAMBIO: Ruta de tu nueva imagen de fondo */
-    background: url("C:/Users/DELL/Downloads/AMARILLA/user.jpg") no-repeat center center;
+    background: url("user.jpg") no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@ html, body {
 /* --- ESCRITORIO Y TODO LO DEMÁS (CÓDIGO ORIGINAL RESTAURADO) --- */
 #desktop {
     height: 100%;
-    background: url("C:/Users/DELL/Downloads/AMARILLA/4K.JPG") no-repeat center center;
+    background: url("4K.JPG") no-repeat center center;
     background-size: cover;
     position: relative;
 }
@@ -151,13 +151,13 @@ button.minimize-btn, button.maximize-btn { background: #0078d4; }
 </head>
 <body>
 
-<audio id="startup-sound" src="C:/Users/DELL/Downloads/AMARILLA/startup.mp3"></audio>
-<audio id="click-sound" src="C:/Users/DELL/Downloads/AMARILLA/click.mp3"></audio>
-<audio id="error-sound" src="C:/Users/DELL/Downloads/AMARILLA/error.mp3"></audio>
-<audio id="background-audio" loop src="C:/Users/DELL/Downloads/AMARILLA/AUDIO.mp3"></audio>
+<audio id="startup-sound" src="startup.mp3"></audio>
+<audio id="click-sound" src="click.mp3"></audio>
+<audio id="error-sound" src="error.mp3"></audio>
+<audio id="background-audio" loop src="AUDIO.mp3"></audio>
 
 <div id="boot-video-screen" class="screen">
-    <video id="boot-video" src="C:/Users/DELL/Downloads/AMARILLA/inicio.mp4" autoplay muted playsinline></video>
+    <video id="boot-video" src="inicio.mp4" autoplay muted playsinline></video>
 </div>
 
 <div id="login-screen" class="screen">
@@ -172,7 +172,7 @@ button.minimize-btn, button.maximize-btn { background: #0078d4; }
 <div id="main-ui-container">
     <div id="desktop">
         <div class="desktop-icon" id="icon-memory">
-            <img src="C:/Users/DELL/Downloads/AMARILLA/ICONO.png" alt="Recuerdo">
+            <img src="ICONO.png" alt="Recuerdo">
             <span>recuerdo_0921.exe</span>
         </div>
         <div class="desktop-icon" id="icon-mypc">
@@ -210,7 +210,7 @@ button.minimize-btn, button.maximize-btn { background: #0078d4; }
 
     <div id="taskbar">
         <div id="start-button">
-            <img src="C:/Users/DELL/Downloads/AMARILLA/WINDOWS.png" alt="start">
+            <img src="WINDOWS.png" alt="start">
             Inicio
         </div>
         <div id="task-items"></div>
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (["plaquetas", "plaqueta"].includes(userAnswer)) {
             questionPrompt.style.display = 'none';
             video.style.display = 'block';
-            video.src = "C:/Users/DELL/Downloads/AMARILLA/VIDEO.mp4";
+            video.src = "VIDEO.mp4";
             video.play();
             backgroundAudio.volume = 0.5;
             backgroundAudio.play();
