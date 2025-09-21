@@ -108,6 +108,8 @@ html, body {
 #icon-memory { top: 30px; left: 30px; }
 #icon-mypc { top: 120px; left: 30px; }
 #icon-recyclebin { top: 210px; left: 30px; }
+/* NUEVO: Icono de Pantalla Completa */
+#icon-fullscreen { top: 300px; left: 30px; }
 
 .window {
     position: absolute; min-width: 400px; min-height: 300px;
@@ -223,6 +225,10 @@ button.minimize-btn, button.maximize-btn { background: #0078d4; }
             <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_full-5.png" alt="Papelera">
             <span>Papelera de reciclaje</span>
         </div>
+        <div class="desktop-icon" id="icon-fullscreen">
+            <img src="https://win98icons.alexmeub.com/icons/png/monitor-3.png" alt="Pantalla Completa">
+            <span>fullscreen.exe</span>
+        </div>
 
         <div class="window" id="memory-window" style="width: 70vw; height: 75vh; top: 10%; left: 15%;">
             <div class="title-bar">
@@ -306,6 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitAnswerBtn = document.getElementById('submit-answer');
     const errorMsg = document.getElementById('error-msg');
     const taskItemsContainer = document.getElementById('task-items');
+    // NUEVO: Icono de pantalla completa
+    const fullscreenIcon = document.getElementById('icon-fullscreen');
+
     let zCounter = 11;
 
     // --- SECUENCIA DE INICIO ---
@@ -425,6 +434,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     makeWindowDraggable(memoryWindow);
+    
+    // NUEVO: Lógica para el botón de pantalla completa
+    fullscreenIcon.addEventListener('dblclick', () => {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+            document.documentElement.msRequestFullscreen();
+        }
+    });
 });
 </script>
 
